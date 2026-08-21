@@ -1,0 +1,6 @@
+akshare>=1.13.25
+pandas>=2.1.0
+numpy>=1.26.0
+yfinance>=0.2.40
+requests>=2.31.0
+PyYAML>=6.0.1

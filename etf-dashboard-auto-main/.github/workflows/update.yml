@@ -1,0 +1,44 @@
+name: Update ETF dashboard data
+
+on:
+  schedule:
+    - cron: "30 10 * * 1-5"  # 每个工作日 UTC 10:30（北京时间 18:30）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Fetch data and compute metrics
+        run: |
+          python scripts/fetch_djeva.py
+          python scripts/fetch_cn_csindex.py
+          python scripts/fetch_hk_hsi.py
+          python scripts/fetch_us_yf.py
+          python scripts/compute_metrics.py
+          python scripts/build_assets.py
+
+      - name: Commit and push updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/assets.csv data/raw data/processed || true
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: data auto-update $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          git push

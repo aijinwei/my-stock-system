@@ -1,0 +1,175 @@
+# 指数配置表
+# - class 可选：CN_CSI / HK_HSI / US_INDEX
+# - djeva_code：用于从 djeva 估值源匹配
+# - price_symbol：行情主代码；优先通过 akshare 或 yfinance 获取
+
+# --- 港股及中概指数 ---
+- name: 中概互联50
+  code: "CSIH30533"
+  djeva_code: "CSIH30533"
+  class: "CN_CSI"
+  price_symbol: "csih30533"
+  etf_proxies:
+    - "513050.SS"
+    - "KWEB"
+
+- name: 恒生科技
+  code: "HKHSTECH"
+  djeva_code: "HKHSTECH"
+  class: "HK_HSI"
+  price_symbol: "3032.HK"
+  etf_proxies:
+    - "3067.HK"
+    - "513180.SS"
+
+- name: 恒生指数
+  code: "HKHSI"
+  djeva_code: "HKHSI"
+  class: "HK_HSI"
+  price_symbol: "^HSI"
+  etf_proxies:
+    - "2800.HK"
+    - "159920.SZ"
+
+# --- A 股指数 ---
+- name: 中证医疗
+  code: "SZ399989"
+  djeva_code: "SZ399989"
+  class: "CN_CSI"
+  price_symbol: "sz399989"
+  etf_proxies:
+    - "512170.SS"
+
+- name: 全指医药
+  code: "SH000991"
+  djeva_code: "SH000991"
+  class: "CN_CSI"
+  price_symbol: "sh000991"
+  etf_proxies:
+    - "159938.SZ"
+
+- name: 中证传媒
+  code: "SZ399971"
+  djeva_code: "SZ399971"
+  class: "CN_CSI"
+  price_symbol: "sz399971"
+  etf_proxies:
+    - "512980.SS"
+
+- name: 主要消费
+  code: "SH000932"
+  djeva_code: "SH000932"
+  class: "CN_CSI"
+  price_symbol: "sh000932"
+  etf_proxies:
+    - "159928.SZ"
+
+- name: 中证500
+  code: "SH000905"
+  djeva_code: "SH000905"
+  class: "CN_CSI"
+  price_symbol: "sh000905"
+  etf_proxies:
+    - "510500.SS"
+    - "159922.SZ"
+
+- name: 中证1000
+  code: "SH000852"
+  djeva_code: "SH000852"
+  class: "CN_CSI"
+  price_symbol: "sh000852"
+  etf_proxies:
+    - "159629.SZ"
+
+- name: 创业板指
+  code: "SZ399006"
+  djeva_code: "SZ399006"
+  class: "CN_CSI"
+  price_symbol: "sz399006"
+  etf_proxies:
+    - "159915.SZ"
+
+- name: 科创50
+  code: "SH000688"
+  djeva_code: "SH000688"
+  class: "CN_CSI"
+  price_symbol: "sh000688"
+  etf_proxies:
+    - "588000.SS"
+
+- name: 证券行业
+  code: "SZ399975"
+  djeva_code: "SZ399975"
+  class: "CN_CSI"
+  price_symbol: "sz399975"
+  etf_proxies:
+    - "512880.SS"
+
+- name: 沪深300
+  code: "SH000300"
+  djeva_code: "SH000300"
+  class: "CN_CSI"
+  price_symbol: "sh000300"
+  etf_proxies:
+    - "510300.SS"
+    - "159919.SZ"
+
+- name: 全指信息
+  code: "SH000993"
+  djeva_code: "SH000993"
+  class: "CN_CSI"
+  price_symbol: "sh000993"
+  etf_proxies:
+    - "159939.SZ"
+
+- name: 中证环保
+  code: "SH000827"
+  djeva_code: "SH000827"
+  class: "CN_CSI"
+  price_symbol: "sh000827"
+  etf_proxies:
+    - "512580.SS"
+
+- name: 养老产业
+  code: "SZ399812"
+  djeva_code: "SZ399812"
+  class: "CN_CSI"
+  price_symbol: "sz399812"
+  etf_proxies:
+    - "159842.SZ"
+
+- name: 中证红利
+  code: "SH000922"
+  djeva_code: "SH000922"
+  class: "CN_CSI"
+  price_symbol: "sh000922"
+  etf_proxies:
+    - "515180.SS"
+
+# --- 海外指数 ---
+- name: 纳斯达克100
+  code: "NDX"
+  djeva_code: "NDX"
+  class: "US_INDEX"
+  price_symbol: "^NDX"
+  etf_proxies:
+    - "QQQ"
+    - "513100.SS"
+
+- name: 标普500
+  code: "SP500"
+  djeva_code: "SP500"
+  class: "US_INDEX"
+  price_symbol: "^GSPC"
+  etf_proxies:
+    - "SPY"
+    - "513500.SS"
+
+- name: 德国DAX
+  code: "GDAXI"
+  djeva_code: "GDAXI"
+  class: "US_INDEX"
+  price_symbol: "^GDAXI"
+  etf_proxies:
+    - "DAXEX.DE"
+    - "513030.SS"
