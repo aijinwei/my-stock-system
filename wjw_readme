@@ -2,8 +2,11 @@ push 方式：git push -u origin main
 
 --------------------
 etf-dashboard-auto-main 这个是另一个项目 https://github.com/JianweiWang/etf-dashboard-auto/tree/main
+Value-master 也是另一个项目 https://github.com/washalin/Value
+
 都放到了这里
 ---------------------
+一开始是对daily_stock_analysis的操作。如下
 
 来自https://github.com/ZhuLinsen/daily_stock_analysis
 和原项目完全断连
