@@ -1,0 +1,35 @@
+来自https://github.com/ZhuLinsen/daily_stock_analysis
+和原项目完全断连
+
+
+# 克隆代码到本地
+git clone https://github.com/ZhuLinsen/daily_stock_analysis.git my-stock-system
+cd my-stock-system
+
+# 直接删掉 .git 目录（最彻底，但会丢失 commit 历史）
+rm -rf .git
+git init
+git add .
+git commit -m "init: based on ZhuLinsen/daily_stock_analysis"
+
+
+github上自己新建项目 my-stock-system
+不要勾选 "Add a README file"、"Add .gitignore"、"Choose a license"（避免初始 commit 冲突）
+
+# 本地代码推送到新仓库
+git remote add origin https://github.com/你的用户名/my-stock-system.git
+git branch -M main
+git push -u origin main
+
+现在你的 GitHub 上有一个完全独立的仓库，没有 "Forked from" 标识，和原项目零关联。
+
+
+daily_stock_analysis 用的是 MIT License。这意味着你可以：自由修改、二次开发、私有化；甚至闭源商用。
+必须保留原作者的版权声明和 MIT 许可证文本（通常在仓库根目录的 LICENSE 文件里）
+建议不要删除 LICENSE 文件
+在自己项目的 LICENSE 或新增的版权声明中，注明：
+	基于 https://github.com/ZhuLinsen/daily_stock_analysis 修改
+	原项目采用 MIT License
+	Copyright (c) 2026 ZhuLinsen
+
+如果你修改了代码，可以在文件头加一行 Modified by [你的名字] on [日期] 这样既合法合规，也对原作者的开源贡献表示了尊重。
